@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
         <form v-on:submit.prevent="getMusic">
-        <p>Enter music selection: <input type="text" v-model="query" placeholder="Dave Matthews"> <button type="submit">Go</button></p>
+        <p>Enter music selection: <input type="text" v-model="query" placeholder="Genre/Artist/Song"> <button type="submit">Go</button></p>
     </form>
+
   </div>
 </template>
 
