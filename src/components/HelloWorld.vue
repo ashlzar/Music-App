@@ -7,11 +7,28 @@
 </template>
 
 <script>
+import {API} from '@/common/api'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      query: '',
+      results: undefined
+    }
+  },
+  methods: {
+    getMusic () {
+      API.get('', {
+        params: {
+          q: this.query
+        }
+      })
+      .then(response => {
+        this.results = response.data
+      })
+      .catch(error => {
+        this.errors.push(error)
+      });
     }
   }
 }
